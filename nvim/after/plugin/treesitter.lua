@@ -1,41 +1,77 @@
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = {
-	  "bash",
-	  "diff",
-	  "html",
-	  "rust",
-	  "toml",
-	  "yaml",
-	  "xml",
-	  "json",
-	  "javascript", 
-	  "python", 
-	  "typescript", 
-	  "c",
-	  "lua",
-	  "luadoc",
-	  "vim",
-	  "vimdoc",
-	  "query",
-	  "markdown", 
-	  "markdown_inline" 
-  },
+require 'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+    ensure_installed = {
+        "bash",
+        "bibtex",
+        "c",
+        "cairo",
+        "cmake",
+        "cpp",
+        "css",
+        "csv",
+        "diff",
+        "dockerfile",
+        "fish",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "go",
+        "html",
+        "ini",
+        "java",
+        "javadoc",
+        "javascript",
+        "jinja",
+        "jinja_inline",
+        "jsdoc",
+        "json",
+        "json5",
+        "kotlin",
+        "latex",
+        "lua",
+        "luadoc",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "nginx",
+        "passwd",
+        "php",
+        "phpdoc",
+        "python",
+        "ruby",
+        "rust",
+        "scss",
+        "ssh_config",
+        "tmux",
+        "toml",
+        "tsx",
+        "typescript",
+        "typespec",
+        "typst",
+        "vim",
+        "vimdoc",
+        "vue",
+        "xml",
+        "yaml",
+        "query",
+    },
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
 
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    auto_install = false,
 
-  highlight = {
-    enable = true,
+    highlight = {
+        enable = true,
 
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    },
 }

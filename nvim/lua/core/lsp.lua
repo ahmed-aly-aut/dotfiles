@@ -47,15 +47,6 @@ autocmd("LspAttach", {
         api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
         -- Core LSP Actions
-        vim.keymap.set('i', '<Tab>', function()
-            if not vim.lsp.inline_completion.get() then
-                return '<Tab>'
-            end
-        end, {
-            expr = true,
-            replace_keycodes = true,
-            desc = 'Get the current inline completion',
-        })
         vim.keymap.set('n', 'K', lsp.buf.hover, { desc = 'LSP: Hover' })
         vim.keymap.set('n', 'gd', lsp.buf.definition, { desc = 'LSP: Go to Definition' })
         vim.keymap.set('n', 'gD', lsp.buf.declaration, { desc = 'LSP: Go to Declaration' })

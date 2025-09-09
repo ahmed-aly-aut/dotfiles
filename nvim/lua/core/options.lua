@@ -26,3 +26,4 @@ vim.o.signcolumn = "yes"
 vim.o.updatetime = 50
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
