@@ -27,7 +27,7 @@ return {
                     library = vim.api.nvim_get_runtime_file("", true),
                 },
                 telemetry = {
-                    enable = true,
+                    enable = false,
                 },
             },
         }
