@@ -18,4 +18,5 @@ require("mason-lspconfig").setup {
         "codebook",
         "gitlab_ci_ls",
     },
+    automatic_enable = false,
 }
