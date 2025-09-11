@@ -1,7 +1,7 @@
 local api, lsp = vim.api, vim.lsp
 local diagnostic, keyset, autocmd = vim.diagnostic, vim.keymap.set, api.nvim_create_autocmd
 
-local icons = require("ui.icons")
+local icons = require("core.icons")
 
 -- Set up custom diagnostic signs for a better visual experience.
 diagnostic.config({
@@ -74,7 +74,7 @@ autocmd("BufWritePre", {
     end,
 })
 
-vim.cmd("set completeopt=menu,menuone,noselect")
+vim.cmd("set completeopt+=noselect")
 
 -- Enable all your language servers using the modern API.
 -- Neovim will automatically load the configuration from the `lsp/` directory.
