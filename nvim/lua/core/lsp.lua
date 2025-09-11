@@ -76,11 +76,27 @@ autocmd("BufWritePre", {
 
 vim.cmd("set completeopt+=noselect")
 
+local function set_filetype(pattern, filetype)
+    vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = pattern,
+        command = "set filetype=" .. filetype,
+    })
+end
+
+-- Allow .yml files to be registerd as .yaml
+set_filetype({ "docker-compose.yml" }, "yaml.docker-compose")
+set_filetype({ "compose.yaml" }, "yaml.docker-compose")
+set_filetype({ "compose.yml" }, "yaml.docker-compose")
+
 -- Enable all your language servers using the modern API.
 -- Neovim will automatically load the configuration from the `lsp/` directory.
 lsp.enable({
     "ruff",
-    "pyright",
+    --    "pyright",
     "lua_ls",
     "odools",
+    "jsonls",
+    "ty",
+    "docker_language_server",
+    "marksman",
 })
