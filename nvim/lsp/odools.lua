@@ -1,4 +1,11 @@
 -- lsp/odools.lua
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
+capabilities.textDocument.hover.contentFormat = { "markdown", "plaintext" }
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 return {
     cmd = { "odoo_ls_server" },
     filetypes = {
@@ -6,24 +13,17 @@ return {
         "xml",
         "csv",
     },
-
-    -- This is a robust, manual version of root_dir that works on older Neovim versions.
-    --root_dir = "/Users/Ahmed.Aly/repositories/odoo",
-    root_dir = vim.fs.root(0, { "pyproject.toml", "odools.toml" }),
     root_markers = {
         {
             "pyproject.toml",
             "odools.toml",
         },
-        ".git"
+        ".git",
     },
-    --    workspace_folders = { {
-    --        uri = vim.uri_from_fname('/Users/Ahmed.Aly/repositories/odoo'),
-    --        name = 'main_folder',
-    --    } },
+    capabilities = capabilities,
     settings = {
         Odoo = {
             selectedProfile = "main",
-        }
+        },
     },
 }

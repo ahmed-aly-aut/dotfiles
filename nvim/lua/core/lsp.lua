@@ -34,7 +34,6 @@ diagnostic.config({
 autocmd("LspAttach", {
     group = api.nvim_create_augroup("UserLspConfig", { clear = true }),
     callback = function(args)
-        -- As you correctly pointed out, we get the client and bufnr from the 'args' table.
         local bufnr = args.buf
         local client = assert(lsp.get_client_by_id(args.data.client_id))
 
@@ -44,31 +43,49 @@ autocmd("LspAttach", {
         end
 
         -- Set omnifunc for fallback completion with Ctrl-X Ctrl-O
-        api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+        api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
 
         -- Core LSP Actions
-        vim.keymap.set('n', 'K', lsp.buf.hover, { desc = 'LSP: Hover' })
-        vim.keymap.set('n', 'gd', lsp.buf.definition, { desc = 'LSP: Go to Definition' })
-        vim.keymap.set('n', 'gD', lsp.buf.declaration, { desc = 'LSP: Go to Declaration' })
-        vim.keymap.set('n', 'gr', lsp.buf.references, { desc = 'LSP: Find References' })
-        vim.keymap.set('n', 'gi', lsp.buf.implementation, { desc = 'LSP: Go to Implementation' })
-        vim.keymap.set('n', '<leader>ws', lsp.buf.workspace_symbol, { desc = 'LSP: Workspace Symbols' })
+        keyset('n', 'K', lsp.buf.hover, { buffer = bufnr, desc = 'LSP: Hover' })
+        keyset('n', 'gd', lsp.buf.definition, { buffer = bufnr, desc = 'LSP: Go to Definition' })
+        keyset('n', 'gD', lsp.buf.declaration, { buffer = bufnr, desc = 'LSP: Go to Declaration' })
+        keyset('n', 'gr', lsp.buf.references, { buffer = bufnr, desc = 'LSP: Find References' })
+        keyset('n', 'gi', lsp.buf.implementation, { buffer = bufnr, desc = 'LSP: Go to Implementation' })
+        keyset('n', 'gt', lsp.buf.type_definition, { buffer = bufnr, desc = 'LSP: Go to Type Definition' })
+        keyset('n', '<leader>ws', lsp.buf.workspace_symbol, { buffer = bufnr, desc = 'LSP: Workspace Symbols' })
+        keyset('n', '<leader>ds', lsp.buf.document_symbol, { buffer = bufnr, desc = 'LSP: Document Symbols' })
+        keyset('n', '<leader>sh', lsp.buf.signature_help, { buffer = bufnr, desc = 'LSP: Signature Help' })
+
 
         -- Renaming and Code Actions
-        vim.keymap.set('n', '<leader>rn', lsp.buf.rename, { desc = 'LSP: Rename' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>ca', lsp.buf.code_action, { desc = 'LSP: Code Action' })
+        keyset('n', '<leader>rn', lsp.buf.rename, { buffer = bufnr, desc = 'LSP: Rename' })
+        keyset({ 'n', 'v' }, '<leader>ca', lsp.buf.code_action, { buffer = bufnr, desc = 'LSP: Code Action' })
 
         -- Diagnostic navigation
-        vim.keymap.set('n', '<leader>dn', diagnostic.goto_next, { desc = 'Diagnostic: Next' })
-        vim.keymap.set('n', '<leader>dp', diagnostic.goto_prev, { desc = 'Diagnostic: Previous' })
-        vim.keymap.set('n', '<leader>de', diagnostic.open_float, { desc = 'Diagnostic: Show Line Diagnostics' })
+        keyset('n', '<leader>dn', diagnostic.goto_next, { buffer = bufnr, desc = 'Diagnostic: Next' })
+        keyset('n', '<leader>dp', diagnostic.goto_prev, { buffer = bufnr, desc = 'Diagnostic: Previous' })
+        keyset('n', '<leader>de', diagnostic.open_float, { buffer = bufnr, desc = 'Diagnostic: Show Line Diagnostics' })
+
+        -- Enable LSP-based folding
+        if client:supports_method("textDocument/foldingRange") then
+            vim.opt_local.foldmethod = "expr"
+            vim.opt_local.foldexpr = "v:lua.vim.lsp.util.make_fold_expr()"
+            vim.opt_local.foldenable = true
+            keyset('n', 'za', vim.cmd.foldopen, { buffer = bufnr, desc = "Fold: Toggle" })
+        end
+
+        -- Enable semantic tokens if the server supports it
+        if client:supports_method("textDocument/semanticTokens/full") then
+            vim.lsp.semantic_tokens.start(bufnr, client.id)
+        end
     end,
 })
 
 -- Auto-format on save
 autocmd("BufWritePre", {
     group = api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
-    pattern = { "*.py", "*.lua" }, -- Add any other filetypes you want to auto-format
+    pattern = { "*.py", "*.lua", "*.xml", "*.csv" }, -- Add any other filetypes you want to auto-format
     callback = function()
         lsp.buf.format({ async = true })
     end,
@@ -95,8 +112,8 @@ lsp.enable({
     --    "pyright",
     "lua_ls",
     "odools",
-    "jsonls",
+    --"jsonls",
     "ty",
-    "docker_language_server",
-    "marksman",
+    --"docker_language_server",
+    --"marksman",
 })
