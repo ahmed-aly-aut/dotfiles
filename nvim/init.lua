@@ -1,5 +1,6 @@
 require("core.options")
 require("core.lsp")
 require("config.remap")
-require("config.lazy")
+require("core.lazy")
+
 vim.cmd.colorscheme "catppuccin-mocha"
