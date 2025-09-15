@@ -8,3 +8,6 @@ nvim/lazy-lock.json
 !tmux/
 !tmux/**
 tmux/plugins
+
+!ghostty/
+!ghostty/**
