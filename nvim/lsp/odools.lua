@@ -5,6 +5,7 @@ capabilities.textDocument.completion.completionItem.documentationFormat = { "mar
 capabilities.textDocument.hover.contentFormat = { "markdown", "plaintext" }
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.offset_encoding = "utf-16"
 
 return {
     cmd = { "odoo_ls_server" },
