@@ -3,6 +3,7 @@
 
 !nvim/
 !nvim/**
+nvim/lazy-lock.json
 
 !tmux/
 !tmux/**
