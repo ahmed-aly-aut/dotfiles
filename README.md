@@ -7,13 +7,18 @@ Configuration files tweaked to my dev environments
 * **Terminal Emulator**: [Ghostty](https://ghostty.org)
   * Theme: [Catppuccin](https://github.com/catppuccin/ghostty) dark theme flavor `mocha`, light theme flavor `latte`
   * Font: [nerdfonts](https://www.nerdfonts.com/font-downloads) `CaskaydiaCove Nerd Font` 
-  * Configuration: [ghostty/config](ghostty/config)
+  * Configuration: [ghostty/config](.config/ghostty/config)
 * **Shell**: [Zsh](https://www.zsh.org/)
   * Prompt: [Oh My Posh](https://ohmyposh.dev/)
   * Configuration: [.zshrc](.zshrc) and [ohmyposh/zen.toml](ohmyposh/zen.toml)
+  * Plugin Manager: [Zinit](https://github.com/zdharma-continuum/zinit)
+    * [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+    * [zsh-completions](https://github.com/zsh-users/zsh-completions)
+    * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    * [fzf-tab](https://github.com/Aloxaf/fzf-tab)
 * **Editor**: [Neovim](https://neovim.io)
   * Plugin Manager: [Lazy.nvim](https://lazy.folke.io)
-  * Configuration: [nvim](./nvim)
+  * Configuration: [nvim](.config/nvim)
   * Requirements for plugins:
     * [fd](https://github.com/sharkdp/fd) requirement for the telescope plugin
     * [nerdfonts](https://www.nerdfonts.com/font-downloads) `CaskaydiaCove Nerd Font`
@@ -23,6 +28,7 @@ Configuration files tweaked to my dev environments
   * [ripgrep](https://github.com/BurntSushi/ripgrep): Search tool like grep and The Silver Searcher.
   * [zoxide](https://github.com/ajeetdsouza/zoxide): zoxide is a smarter **cd command**, inspired by z and autojump.
 * **Terminal Multiplexer**: [tmux](https://github.com/tmux/tmux)
+  * Configuration: [tmux/tmux.conf](.config/tmux/tmux.conf)
 
 ## Mac Installation
 ```bash
