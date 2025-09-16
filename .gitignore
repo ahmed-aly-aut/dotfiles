@@ -1,4 +1,5 @@
 *
+.DS_Store
 !README.md
 
 !nvim/
@@ -11,3 +12,7 @@ tmux/plugins
 
 !ghostty/
 !ghostty/**
+ghostty/.DS_Store
+
+!ohmyposh/
+!ohmyposh/**
