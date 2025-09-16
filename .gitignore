@@ -16,3 +16,10 @@ ghostty/.DS_Store
 
 !ohmyposh/
 !ohmyposh/**
+
+!.config/
+!.config/**
+.config/tmux/plugins
+
+!.zshrc
+!.zprofile

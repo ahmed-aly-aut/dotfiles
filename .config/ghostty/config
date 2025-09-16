@@ -1,0 +1,37 @@
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+font-family = CaskaydiaCove Nerd Font
+font-family = CaskaydiaCove Nerd Font Mono
+font-size = 19
+background-opacity = 0.9
+
+
+cursor-style-blink = false
+cursor-style = block
+
+# don't ask when closing
+confirm-close-surface = false
+
+window-theme = system
+
+shell-integration = zsh
+window-inherit-working-directory=true
+
+# other
+copy-on-select = clipboard
+shell-integration-features = cursor,sudo,no-title
+
+
+# navigate between tmux panes
+# This works only because I remmapped "Hide Ghostty" in macOS keyboards
+# settings to a different keybinding (F9)
+# https://github.com/alacritty/alacritty/issues/5346#issuecomment-1055695103
+#keybind = super+h=text:\x06\x68
+#keybind = super+j=text:\x06\x6a
+#keybind = super+k=text:\x06\x6b
+#keybind = super+l=text:\x06\x6c
+#
+## resize panes
+#keybind = super+right=text:\x06\x4c
+#keybind = super+down=text:\x06\x4a
+#keybind = super+left=text:\x06\x48
+#keybind = super+up=text:\x06\x4b
