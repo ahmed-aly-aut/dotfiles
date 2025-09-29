@@ -37,25 +37,14 @@ Configuration files tweaked to my dev environments
 echo >> ~/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
+brew bundle install
 
-brew install zsh
 chsh -s $(which zsh)
 
-brew install git vim sublime-text
-
-brew install ghostty
-brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-brew install --cask font-caskaydia-cove-nerd-font
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
-brew install neovim
-
-brew install fd
-brew install fzf
-brew install ripgrep
-brew install zoxide
 ```
 
 ## Arch Installation
+```bash
 
+```
