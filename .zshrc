@@ -9,6 +9,8 @@ fi
 
 # Set XDG_CONFIG_HOME
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin:$HOME/.cargo/bin"
+
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -69,6 +71,6 @@ alias lg='lazygit'
 alias ld='latydocker'
 
 # Shell integrations
-. "$HOME/.local/bin/env"
+#. "$HOME/.local/bin/env"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"

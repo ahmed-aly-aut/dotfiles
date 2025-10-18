@@ -44,7 +44,51 @@ chsh -s $(which zsh)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Arch Installation
+## Debian Installation
 ```bash
+sudo apt install -y \
+    zsh \
+    fd-find \
+    fzf \
+    git \
+    git-gui \
+    htop \
+    tree \
+    nmap \
+    ripgrep \
+    stow \
+    tmux \
+    vim \
+    wget \
+    zoxide \
+    gimp \
+    lazygit \
+    nodejs \
+    npm \
+    pkg-config \
+    libssl-dev \
+    default-jre \
+    default-jdk \
+    cargo
+
+cargo install tree-sitter-cli
+curl -s https://ohmyposh.dev/install.sh | bash -s
+curl -fsSL https://bun.sh/install | bash
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+curl -LsSf https://astral.sh/ruff/install.sh | sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Download ghostty from https://github.com/mkasberg/ghostty-ubuntu/releases
+sudo apt install ./ghostty_*.deb
+mkdir ~/.fonts
+# download font and extract into ~/.fonts without a subfolder
+fc-cache -fv
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/ahmed-aly-aut/dotfiles.git ~/repositories/dotfiles
+
+#install neovim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
 ```
