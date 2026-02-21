@@ -1,0 +1,17 @@
+[
+    {
+        "keys": ["ctrl+shift+m"],
+        "command": "markdown_preview",
+        "args": {"target": "browser"}
+    },
+    {
+        "keys": ["ctrl+/"],
+        "command": "toggle_comment",
+        "args": { "block": false }
+    },
+    {
+        "keys": ["ctrl+shift+/"],
+        "command": "toggle_comment",
+        "args": { "block": true }
+    }
+]

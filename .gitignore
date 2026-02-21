@@ -1,3 +1,16 @@
 .DS_Store
 .config/nvim/lazy-lock.json
 .config/tmux/plugins
+.config/sublime-text/Lib
+.config/sublime-text/Local
+.config/sublime-text/Log
+.config/sublime-text/Trash
+.config/sublime-text/Installed Packages
+.config/sublime-text/Packages/Color Scheme - Default
+.config/sublime-text/Packages/User/Color Highlight.cache
+.config/sublime-text/Packages/User/Color Highlighter
+.config/sublime-text/Packages/User/Terminus
+.config/sublime-text/Packages/User/Terminus.hidden-color-scheme
+.config/sublime-text/Packages/User/Package Control.user-ca-bundle
+.config/sublime-text/Packages/User/Package Control.sublime-settings
+

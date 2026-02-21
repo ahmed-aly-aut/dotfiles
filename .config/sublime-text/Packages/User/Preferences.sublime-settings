@@ -1,0 +1,51 @@
+{
+    "spell_check": true,
+    "added_words": [
+        "odoo", "Odoo", "debian", "podman", "nginx", "cgroups", "ubuntu", "buildkit", "trivy", "tcp", "os", "json", "Dockerhub", "entrypoint", "copa", "cli", "Provisionsrechnungen", "Provisionsrechnung", "Erlöskonten", "Erlöskonto", "Bonitätenrechnungen", "Bonitätenrechnung"
+    ],
+    "ignored_packages": [],
+    "vintage_start_in_command_mode": true,
+    //"vintage_ctrl_keys": true,
+    "dictionary": [ 
+        "Packages/Language - English/en_US.dic",
+        "Packages/Language - German/de_AT.dic"
+    ],
+    "caret_style": "phase",
+    "line_padding_top": 5,
+    "line_padding_bottom": 5,
+    "index_files": true,
+
+    // General editor behavior
+    "auto_complete": true,
+    "auto_complete_delay": 50,
+    "auto_complete_selector": "text, comment, string",
+    "tab_completion": true,
+    "save_on_focus_lost": true,
+    "hot_exit": true,
+    "remember_open_files": true,
+
+     // Appearance and readability
+    "font_size": 13,
+    "line_numbers": true,
+    "gutter": true,
+    "theme": "Adaptive.sublime-theme",
+    "color_scheme": "Catppuccin Mocha.sublime-color-scheme",
+    "highlight_line": true,
+    "draw_white_space": "selection",
+    "rulers": [100],           // visual guides for code width
+
+    // --- Indentation & Wrapping ---
+    "detect_indentation": true,
+    "auto_indent": true,
+    "translate_tabs_to_spaces": true,
+    "word_wrap": true,
+    "wrap_width": 100,
+
+    // --- File Formatting ---
+    "ensure_newline_at_eof_on_save": true,
+    "trim_trailing_white_space_on_save": true,
+    "markdown_preview": true,
+	"show_line_endings": true,
+	"indent_guide_options": ["draw_normal", "draw_active"],
+	"distraction_free": true,
+}
