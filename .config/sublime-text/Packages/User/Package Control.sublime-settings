@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"BracketHighlighter",
+		"Color Highlight",
+		"Color Highlighter",
+		"DictionaryAutoComplete",
+		"Dockerfile Syntax Highlighting",
+		"GitGutter",
+		"Markdown Extended",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"nginx",
+		"Package Control",
+		"SideBarEnhancements",
+		"SideBarTools",
+		"Terminus",
+		"Word Count",
+		"WordingStatus",
+	],
+}
