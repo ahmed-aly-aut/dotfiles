@@ -68,9 +68,21 @@ alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
 alias lg='lazygit'
-alias ld='latydocker'
+alias ld='lazydocker'
 
 # Shell integrations
 #. "$HOME/.local/bin/env"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --cmd cd)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+# opencode
+export PATH=/home/ahaly/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/ahaly/.bun/_bun" ] && source "/home/ahaly/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

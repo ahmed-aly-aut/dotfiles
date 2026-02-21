@@ -30,7 +30,9 @@ Configuration files tweaked to my dev environments
 * **Terminal Multiplexer**: [tmux](https://github.com/tmux/tmux)
   * Configuration: [tmux/tmux.conf](.config/tmux/tmux.conf)
 
-## Mac Installation
+## Installation
+
+### Mac Installation
 ```bash
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -44,7 +46,7 @@ chsh -s $(which zsh)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Debian Installation
+### Debian Installation
 ```bash
 sudo apt install -y \
     zsh \
@@ -62,6 +64,7 @@ sudo apt install -y \
     wget \
     zoxide \
     gimp \
+    tree-sitter-cli \
     lazygit \
     nodejs \
     npm \
@@ -71,7 +74,6 @@ sudo apt install -y \
     default-jdk \
     cargo
 
-cargo install tree-sitter-cli
 curl -s https://ohmyposh.dev/install.sh | bash -s
 curl -fsSL https://bun.sh/install | bash
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
@@ -91,4 +93,10 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x8
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
+```
+
+## Deploying Config
+```bash
+cd ~/repositories/dotfiles
+stow --target ~/ . 
 ```

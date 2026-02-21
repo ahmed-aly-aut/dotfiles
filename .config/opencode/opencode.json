@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-mystatus", "opencode-gemini-auth@latest"],
+  "command": {
+    "mystatus": {
+      "description": "Query quota usage for all AI accounts",
+      "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
+    }
+  },
+  "provider": {
+    "google": {
+      "options": {
+        "projectId": "practical-now-485218-j4"
+      }
+    }
+  }
+}
